@@ -64,9 +64,6 @@ namespace MonopolyProject
                     pallet.Height = Convert.ToInt32(HeightPalletTextBox.Text);
                     pallet.Depth = Convert.ToInt32(DepthPalletTextBox.Text);
 
-                    //Вес паллеты вычисляется из суммы веса вложенных коробок + 30кг.
-                    //pallet.Weight = 
-
                     db.Pallets.Add(pallet);
 
                     db.SaveChanges();
@@ -113,6 +110,7 @@ namespace MonopolyProject
 
                     box.PalletId = Convert.ToInt32(NumberPalletComboBox.Text);
 
+                    //Вычисляем объем коробки
                     box.CalculationVolume(box.Width, box.Height, box.Depth);
 
                     //Заполнена ли дата срока годности
